@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Результат відповіді</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body class="content-page">
+    <div class="TestResult">
+        {% if result %}
+            <h2>Правильно!</h2>
+        {% else %}
+            <h2>Неправильно!</h2>
+            <p>Правильна відповідь: {{ correct }}</p>
+        {% endif %}
+        <a href="/test">Наступне питання</a>
+        <a href="/test_result">Завершити тест</a>
+    </div>
+</body>
+</html>

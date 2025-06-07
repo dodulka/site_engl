@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Вивчення слів</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body class="content-page">
+    <div class="learning">
+        <h2>{{ word.en }}</h2>
+        <form method="POST" action="/learned">
+            <input type="hidden" name="word_id" value="{{ word.id }}">
+            <button type="submit">Вивчив це слово</button>
+        </form>
+        <a href="/test">Пройти тест</a><br>
+        <a href="/stats">Статистика</a><br>
+        <a href="/logout">Вийти</a>
+    </div>
+</body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Тестування</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body class="content-page">
+    <div class="learning">
+        <h2>Перекладіть слово: {{ word }}</h2>
+        <form method="POST" action="/check_answer">
+            {% for option in options %}
+                <div>
+                    <input type="radio" id="{{ option }}" name="selected" value="{{ option }}" required>
+                    <label for="{{ option }}">{{ option }}</label>
+                </div>
+            {% endfor %}
+            <input type="hidden" name="correct" value="{{ correct }}">
+            <button type="submit">Перевірити</button>
+        </form>
+    </div>
+</body>
+</html>

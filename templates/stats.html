@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Статистика</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body class="content-page">
+    <div class="TestResult">
+        <h2>Вивчені слова</h2>
+        <p>Кількість вивчених слів: {{ count }}</p>
+        <a href="/learn">Продовжити навчання</a><br>
+        <a href="/logout">Вийти</a>
+    </div>
+</body>
+</html>
