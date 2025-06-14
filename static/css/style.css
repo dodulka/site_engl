@@ -195,3 +195,37 @@ button:hover {
     color: #00aaff;
     text-decoration: underline;
 }
+
+
+.learning div {
+    margin: 15px auto;
+    width: 80%;
+    text-align: сenter;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    padding: 15px 15px 15px 0;
+    transition: all 0.3s ease;
+}
+
+.learning div:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    transform: scale(1.02);
+}
+
+.learning input[type="radio"] {
+    display: none;
+}
+
+.learning label {
+    display: block;
+    padding: 10px 15px;
+    font-size: 1.2em;
+    color: white;
+    width: 100%;
+    transition: all 0.3s ease;
+}
+
+.learning input[type="radio"]:checked + label {
+    color: #00aaff;
+    font-weight: bold;
+}
