@@ -6,7 +6,8 @@
 </head>
 <body class="content-page">
     <div class="learning">
-        <h2>Перекладіть слово: {{ word }}</h2>
+        <h2>Перекладіть слово:</h2>
+        <h1 style="color: #00aaff; margin: 20px 0;">{{ word }}</h1>
         <form method="POST" action="/check_answer">
             {% for option in options %}
                 <div>
@@ -20,3 +21,4 @@
     </div>
 </body>
 </html>
+
