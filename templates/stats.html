@@ -1,15 +1,22 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Статистика</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+  <title>Статистика</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body class="content-page">
-    <div class="TestResult">
-        <h2>Вивчені слова</h2>
-        <p>Кількість вивчених слів: {{ count }}</p>
-        <a href="/learn">Продовжити навчання</a><br>
-        <a href="/logout">Вийти</a>
-    </div>
+  <div class="TestResult">
+    <h2>Вивчені слова</h2>
+    <p id="count"></p>
+    <a href="learn.html">Продовжити навчання</a><br>
+    <a href="#" onclick="logout()">Вийти</a>
+  </div>
+  <script src="main.js"></script>
+  <script>
+    const users = getUsers();
+    const user = users.find(u => u.username === getCurrentUser());
+    if (!user) location.href = 'login.html';
+    document.getElementById('count').innerText = `Кількість вивчених слів: ${user.learned.length}`;
+  </script>
 </body>
 </html>

@@ -1,184 +1,51 @@
 body {
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    color: white;
-    font-family: 'Segoe UI', Arial, sans-serif;
-    font-weight: bold;
-    text-align: center;
-    padding-top: 50px;
-}
-
-.Register-Page {
-    background-image: url('/static/images/bg_img.jpg');
-}
-
-.content-page {
-    background-image: url('/static/images/w_bg_img.jpg');
-}
-
-.Login, .Register {
-    background-color: rgba(51, 51, 51, 0.8);
-    width: 450px;
-    margin: 70px auto;
-    padding: 30px;
-    border-radius: 15px;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
-}
-
-input {
-    background-color: rgba(255, 255, 255, 0.9);
-    width: 80%;
-    margin: 10px auto;
-    padding: 3%;
-    border-radius: 8px;
-    font-size: 16px;
-    display: block;
+    font-family: Arial, sans-serif;
+    background: #f0f0f0;
+    padding: 20px;
+    color: #333;
+  }
+  
+  .content-page, .Register-Page {
+    max-width: 400px;
+    margin: auto;
+    background: #fff;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  }
+  
+  input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 12px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+  }
+  
+  button {
+    padding: 10px;
+    width: 100%;
+    background: #28a745;
+    color: #fff;
     border: none;
-}
-
-button {
-    margin-left: 10%;
-    width: 80%;
-    margin-top: 20px;
-    padding: 12px;
-    background-color: #00aaff;
-    color: white;
-    border-radius: 8px;
+    border-radius: 6px;
     cursor: pointer;
-    font-size: 16px;
-    transition: 0.3s;
-    display: block;
-    border: none;
-}
-
-button:hover {
-    transform: scale(1.05);
-}
-
-.input-group {
-    position: relative;
-    width: 80%;
-    margin: 20px auto;
-}
-
-.error-message {
-    position: absolute;
-    top: -5px;
-    left: 50%;
-    color: #ff3333;
-    font-size: 12px;
-    margin-top: 5px;
-    text-align: left;
-    border-radius: 4px;
-    animation: fadeInUp 0.3s ease-in-out;
-}
-
-@keyframes fadeInUp {
-    from {
-        opacity: 0;
-        transform: translateY(-10px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-.TestResult {
-    background-color: rgba(51, 51, 51, 0.9);
-    width: 450px;
-    margin: 70px auto;
-    padding: 40px;
-    border-radius: 15px;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
-}
-
-.TestResult h2 {
-    font-size: 2.5em;
-    padding-bottom: 30px;
-    border-bottom: white 3px solid;
-    margin-bottom: 30px;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
-}
-
-.TestResult p {
-    font-size: 1.5em;
-    color: white;
-    margin: 20px 0;
-    padding-bottom: 50px;
-}
-
-.TestResult a {
+  }
+  
+  button:hover {
+    background: #218838;
+  }
+  
+  a {
     display: inline-block;
-    color: #00aaff;
+    margin-top: 10px;
+    color: #007bff;
     text-decoration: none;
-    margin: 0 10px;
-    padding: 10px 20px;
-    border-radius: 8px;
-    transition: 0.3s ease;
-}
-
-.TestResult a:hover {
-    transform: scale(1.2);
-}
-
-.learning {
-    background-color: rgba(51, 51, 51, 0.9);
-    width: 450px;
-    margin: 70px auto;
-    padding: 40px;
-    border-radius: 15px;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
-}
-
-.learning h2 {
-    font-size: 3.5em;
-    margin-bottom: 30px;
-    initial-letter: 2;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
-    padding-bottom: 30px;
-    border-bottom: white 3px solid;
-}
-
-.learning button {
-    background: linear-gradient(45deg, #00aaff, #0088cc);
-    width: 90%;
-    padding: 15px;
-    font-size: 1.2em;
-    margin: 20px auto;
-}
-
-.learning a {
-    color: #ffffff;
-    text-decoration: none;
-    font-size: 1.1em;
-    transition: all 0.3s ease;
-    display: inline-block;
-    padding: 10px 20px;
-    border-radius: 8px;
-    margin-top: 20px;
-}
-
-.learning a:hover {
-    color: #ffffff;
-    transform: scale(1.05);
-}
-
-.register-link {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
-    color: #888888;
-    font-size: 0.9em;
-    margin-top: 15px;
-    display: inline-block;
-    text-decoration: none;
-    transition: color 0.3s ease;
-}
-
-.register-link:hover {
-    color: #00aaff; 
+  }
+  
+  a:hover {
     text-decoration: underline;
+<<<<<<< Updated upstream
 }
 
 .register-link {
@@ -229,3 +96,7 @@ button:hover {
     color: #00aaff;
     font-weight: bold;
 }
+=======
+  }
+  
+>>>>>>> Stashed changes

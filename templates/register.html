@@ -1,21 +1,31 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Реєстрація</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+  <title>Реєстрація</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body class="Register-Page">
-    <h2>Реєстрація</h2>
-    <div class="Register">
-        <form method="POST">
-            <input name="username" placeholder="Ім'я користувача" required>
-            <input name="password" type="password" placeholder="Пароль" required>
-            <button type="submit">Зареєструватися</button>
-        </form>
-        {% if error %}
-            <p style="color:red;">{{ error }}</p>
-        {% endif %}
-        <a href="/login" class="register-link">Вже є акаунт? Увійти</a>
-    </div>
+  <h2>Реєстрація</h2>
+  <div class="Register">
+    <input id="username" placeholder="Ім'я користувача" required>
+    <input id="password" type="password" placeholder="Пароль" required>
+    <button onclick="handleRegister()">Зареєструватися</button>
+    <p id="error" style="color:red;"></p>
+    <a href="login.html" class="register-link">Вже є акаунт? Увійти</a>
+  </div>
+  <script src="main.js"></script>
+  <script src="auth.js"></script>
+  <script>
+    function handleRegister() {
+      const user = document.getElementById('username').value;
+      const pass = document.getElementById('password').value;
+      const error = register(user, pass);
+      if (error) {
+        document.getElementById('error').innerText = error;
+      } else {
+        location.href = 'login.html';
+      }
+    }
+  </script>
 </body>
 </html>

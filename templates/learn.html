@@ -1,19 +1,27 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Вивчення слів</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+  <title>Вивчення слів</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body class="content-page">
-    <div class="learning">
-        <h2>{{ word.en }}</h2>
-        <form method="POST" action="/learned">
-            <input type="hidden" name="word_id" value="{{ word.id }}">
-            <button type="submit">Вивчив це слово</button>
-        </form>
-        <a href="/test">Пройти тест</a><br>
-        <a href="/stats">Статистика</a><br>
-        <a href="/logout">Вийти</a>
-    </div>
+  <div class="learning">
+    <h2 id="word"></h2>
+    <button id="learnedBtn">Вивчив це слово</button><br>
+    <a href="test.html">Пройти тест</a><br>
+    <a href="stats.html">Статистика</a><br>
+    <a href="#" onclick="logout()">Вийти</a>
+  </div>
+  <script src="main.js"></script>
+  <script src="learn.js"></script>
+  <script>
+    if (!getCurrentUser()) location.href = 'login.html';
+    const word = getRandomWord();
+    document.getElementById('word').innerText = word.en;
+    document.getElementById('learnedBtn').onclick = () => {
+      markLearned(word);
+      location.reload();
+    };
+  </script>
 </body>
 </html>

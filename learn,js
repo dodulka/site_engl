@@ -1,0 +1,28 @@
+// learn.js
+
+const defaultWords = [
+  { en: 'apple', ua: 'яблуко', img: 'apple_img.jpg' },
+  { en: 'dog', ua: 'пес', img: 'dog_img.jpg' },
+  { en: 'milk', ua: 'молоко', img: 'milk_img.jpg' },
+  { en: 'sun', ua: 'сонце', img: 'sun_img.jpg' },
+  { en: 'car', ua: 'машина', img: 'car_img.jpg' },
+  { en: 'house', ua: 'будинок', img: 'house_img.jpg' },
+  { en: 'book', ua: 'книга', img: 'book_img.jpg' },
+  { en: 'water', ua: 'вода', img: 'water_img.jpg' },
+  { en: 'fire', ua: 'вогонь', img: 'fire_img.jpg' },
+  { en: 'sky', ua: 'небо', img: 'sky_img.jpg' }
+];
+
+function getRandomWord() {
+  const index = Math.floor(Math.random() * defaultWords.length);
+  return { ...defaultWords[index], id: index };
+}
+
+function markLearned(word) {
+  const users = getUsers();
+  const user = users.find(u => u.username === getCurrentUser());
+  if (!user.learned.includes(word.id)) {
+    user.learned.push(word.id);
+    saveUsers(users);
+  }
+}

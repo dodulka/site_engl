@@ -1,19 +1,23 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Результат відповіді</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+  <title>Результат</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body class="content-page">
-    <div class="TestResult">
-        {% if result %}
-            <h2>Правильно!</h2>
-        {% else %}
-            <h2>Неправильно!</h2>
-            <p>Правильна відповідь: {{ correct }}</p>
-        {% endif %}
-        <a href="/test">Наступне питання</a>
-        <a href="/test_result">Завершити тест</a>
-    </div>
+  <div class="TestResult">
+    <h2 id="resultText"></h2>
+    <p id="correctAns"></p>
+    <a href="test.html">Наступне питання</a>
+    <a href="stats.html">Результати</a>
+  </div>
+  <script>
+    const urlParams = new URLSearchParams(window.location.search);
+    const correct = urlParams.get('correct');
+    const selected = urlParams.get('selected');
+    const result = correct === selected;
+    document.getElementById('resultText').innerText = result ? 'Правильно!' : 'Неправильно!';
+    if (!result) document.getElementById('correctAns').innerText = `Правильна відповідь: ${correct}`;
+  </script>
 </body>
 </html>

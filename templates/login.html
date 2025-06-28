@@ -1,20 +1,31 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Вхід</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+  <title>Вхід</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body class="Register-Page">
-    <h2>Вхід</h2>
-    <div class="Login">
-        <form method="POST">
-            <input name="username" placeholder="Ім'я користувача" required>
-            <input name="password" type="password" placeholder="Пароль" required>
-            <button type="submit">Увійти</button>
-        </form>
-        {% if error %}
-            <p style="color:red;">{{ error }}</p>
-        {% endif %}
-        <a href="/register" class="register-link">Нема акаунту? Зареєструватися</a>
-
-
+  <h2>Вхід</h2>
+  <div class="Login">
+    <input id="username" placeholder="Ім'я користувача" required>
+    <input id="password" type="password" placeholder="Пароль" required>
+    <button onclick="handleLogin()">Увійти</button>
+    <p id="error" style="color:red;"></p>
+    <a href="register.html" class="register-link">Нема акаунту? Зареєструватися</a>
+  </div>
+  <script src="main.js"></script>
+  <script src="auth.js"></script>
+  <script>
+    if (getCurrentUser()) location.href = 'learn.html';
+    function handleLogin() {
+      const user = document.getElementById('username').value;
+      const pass = document.getElementById('password').value;
+      if (!login(user, pass)) {
+        document.getElementById('error').innerText = 'Невірні дані';
+      } else {
+        location.href = 'learn.html';
+      }
+    }
+  </script>
+</body>
+</html>
